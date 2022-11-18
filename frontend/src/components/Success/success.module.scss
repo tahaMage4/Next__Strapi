@@ -1,0 +1,30 @@
+.main {
+  text-align: center;
+  padding: 40px 0;
+  background: #ebf0f5;
+
+  .card {
+    background: white;
+    padding: 60px;
+    border-radius: 4px;
+    box-shadow: 0 2px 3px #c8d0d8;
+    display: inline-block;
+    margin: 0 auto;
+
+    h1 {
+      text-align: center;
+      margin-bottom: 10px;
+    }
+    p {
+      text-align: center;
+      color: #404f5e;
+      margin: 0;
+    }
+    i {
+      color: #9abc66;
+      font-size: 100px;
+      line-height: 200px;
+      margin-left: -15px;
+    }
+  }
+}

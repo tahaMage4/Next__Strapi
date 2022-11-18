@@ -1,0 +1,66 @@
+{
+  "kind": "collectionType",
+  "collectionName": "products",
+  "info": {
+    "singularName": "product",
+    "pluralName": "products",
+    "displayName": "Products",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Name": {
+      "type": "string"
+    },
+    "Price": {
+      "type": "integer"
+    },
+    "Description": {
+      "type": "richtext"
+    },
+    "Slug": {
+      "type": "uid"
+    },
+    "Image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "category": {
+      "type": "enumeration",
+      "enum": [
+        "shoes",
+        "t-shirt",
+        "shirt"
+      ],
+      "default": "shoes",
+      "enumName": "shoes",
+      "required": true
+    },
+    "Size": {
+      "type": "string",
+      "maxLength": 70
+    },
+    "colors": {
+      "type": "enumeration",
+      "enum": [
+        "red",
+        "yellow",
+        "blue"
+      ],
+      "required": true
+    },
+    "Category": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::category.category",
+      "inversedBy": "products"
+    }
+  }
+}
