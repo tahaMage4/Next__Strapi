@@ -5,14 +5,22 @@ import Layout from "@components/Layout";
 import Cookies from "@components/Cookies";
 
 function MyApp({ Component, pageProps }) {
-  useEffect(() => {
-    // <Cookies />;
-  }, []);
-
   // Cart State
   const [cart, setCart] = useState([]);
   // Reload the Data
   const [reloadKey, setReloadKey] = useState(1);
+
+  useEffect(() => {
+    const data = window.localStorage.getItem("item");
+    console.log("data", data);
+    if (data !== []) {
+      return setCart(JSON.parse(data));
+    }
+  }, []);
+
+  useEffect(() => {
+    window.localStorage.setItem("item", JSON.stringify(cart));
+  }, [cart]);
 
   const AddToCart = (item, qty, price) => {
     let newcart = cart;
